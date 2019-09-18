@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Assignment 2</string>
+    <string name="linear">Enter your linear function:</string>
+    <string name="quadratic">Enter your quadratic function:</string>
+    <string name="cubic">Enter your cubic function:</string>
+    <string name="quartic">Enter your quartic function:</string>
 </resources>
