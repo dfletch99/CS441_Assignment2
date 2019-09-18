@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText second = findViewById(R.id.second_degree);
         final EditText first = findViewById(R.id.first_degree);
         final EditText constant = findViewById(R.id.constant);
+        final EditText x_coor = findViewById(R.id.input_x);
 
         final GraphView graph = findViewById(R.id.graph);
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Button graphButton = findViewById(R.id.graphButton);
         final Button clearButton = findViewById(R.id.clearButton);
+        final Button jumpButton = findViewById(R.id.jumpButton);
 
         final Button linearButton = findViewById(R.id.linearButton);
         final Button quadraticButton = findViewById(R.id.quadraticButton);
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 series = new LineGraphSeries<DataPoint>();
                 double x, y;
-                double fourth_degree_num = 0, third_degree_num = 0, second_degree_num = 0, first_degree_num = 1, constant_num = 0;
+                double fourth_degree_num = 0, third_degree_num = 0, second_degree_num = 0, first_degree_num, constant_num;
                 if(isQuartic){
                     if(TextUtils.isEmpty(fourth.getText())) fourth_degree_num = 1;
                     else if(fourth.getText().toString().equals("-")) fourth_degree_num = -1;
@@ -128,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 graph.removeAllSeries();
                 lineCounter = 0;
+                graph.getViewport().setXAxisBoundsManual(false);
             }
         });
 
@@ -224,6 +227,18 @@ public class MainActivity extends AppCompatActivity {
                 power4.setVisibility(View.VISIBLE);
                 power3.setVisibility(View.VISIBLE);
                 power2.setVisibility(View.VISIBLE);
+            }
+        });
+
+        jumpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!TextUtils.isEmpty(x_coor.getText()) && !x_coor.getText().toString().equals("-")){
+                    graph.getViewport().setMinX(Double.parseDouble(x_coor.getText().toString()) - 25);
+                    graph.getViewport().setMaxX(Double.parseDouble(x_coor.getText().toString()) + 25);
+                    graph.getViewport().setXAxisBoundsManual(true);
+                    graph.onDataChanged(true, false);
+                }
             }
         });
     }
