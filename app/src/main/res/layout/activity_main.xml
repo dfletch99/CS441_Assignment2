@@ -160,10 +160,10 @@
         android:textSize="10pt"
         app:layout_constraintBottom_toTopOf="@+id/graph"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toEndOf="@+id/x_plus_second"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <EditText
         android:id="@+id/constant"
