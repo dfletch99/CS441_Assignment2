@@ -195,7 +195,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:shadowColor="#00131212"
+        android:shadowColor="#94000000"
         android:text="GRAPH"
         android:textStyle="bold"
         app:backgroundTint="@android:color/holo_purple"
@@ -204,7 +204,9 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.598" />
+        app:layout_constraintVertical_bias="0.598"
+        tools:shadowColor="#00000000"
+        tools:shadowRadius="4" />
 
     <Button
         android:id="@+id/linearButton"
